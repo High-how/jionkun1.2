@@ -1,0 +1,19 @@
+.list-main
+  .main-header
+    .main-header__list
+      %p.main-header__list__name
+        会員データor一覧
+    .main-header__edit
+      = link_to "#", class: "btn" do
+        Edit
+
+  .lists
+    .list
+      .list__upbox
+      .list__downbox
+
+  .form
+    %form.serch
+      .seach_box
+        %input{type: "seach", class: "seach_box__text",placeholder: "キーワードを入力"}
+      %input{type: "submit", class: "submit-btn", value: "検索"}
