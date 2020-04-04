@@ -1,0 +1,27 @@
+.member-form
+  %h1 新規会員・故人データ登録
+  .new_member
+    = form_for @member, url: step3_signup_index_path, method: :get do |f|
+      .new_member__field
+        .new_member__field--left
+          = f.label :secularname, "俗名", class: 'member-form__label'
+        .new_member__field--right
+          = f.text_field :secularname, class: "member-form__secularname member-form__input", placeholder: "俗名を入力してください"
+
+      .new_member__field.clearfix
+        .new_member__field--left
+          = f.label :dharmaname, "戒名", class: 'member-form__label'
+        .new_member__field--right
+          = f.text_field :dharmaname, class: "member-form__dharmaname member-form__input", placeholder: "戒名を入力してください"
+
+      .new_member__field.clearfix
+        .new_member__field--left
+          = f.label :deceased, "命日", class: 'member-form__label'
+        .new_member__field--right
+          = f.date_select :deceased, class: "member-form__deceased member-form__input", use_month_numbers: true,start_year: 1930, end_year: (Time.now.year), default: Date.new(1989, 1, 1)
+      
+      .new_member__field.clearfix
+        .new_member__field--left
+        .new_member__field--right
+          = f.submit "次の項目へ", class: "member-form__action-btn"
+
