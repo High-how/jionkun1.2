@@ -1,0 +1,36 @@
+.member-form
+  %h1 お申し込み登録
+  .new_member
+    = form_for @member, url: signup_index_path, method: :post do |f|
+      .new_member__field
+        .new_member__field--left
+          = f.label :spring, "春期彼岸お申し込み", class: 'member-form__label'
+        .new_member__field--right
+          = f.check_box :spring, class: "member-form__spring member-form__input"
+
+      .new_member__field.clearfix
+        .new_member__field--left
+          = f.label :summer, "お施餓鬼お申し込み", class: 'member-form__label'
+        .new_member__field--right
+          = f.check_box :summer, class: "member-form__summer member-form__input"
+
+      .new_member__field.clearfix
+        .new_member__field--left
+          = f.label :autumn, "秋期彼岸お申し込み", class: 'member-form__label'
+        .new_member__field--right
+          = f.check_box :autumn, class: "member-form__autumn member-form__input"
+
+      .new_member__field.clearfix
+        .new_member__field--left
+          = f.label :winter, "大般若お申し込み", class: 'member-form__label'
+        .new_member__field--right
+          = f.check_box :winter, class: "member-form__winter member-form__input"
+
+      .new_member__field.clearfix
+        .new_member__field--left
+        .new_member__field--right
+          = f.submit "登録", class: "member-form__action-btn"
+
+      
+
+
